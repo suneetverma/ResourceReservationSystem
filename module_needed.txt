@@ -1,0 +1,7 @@
+python3
+flask
+flask_restful
+flask_sqlalchemy
+logging
+pexpect
+time

@@ -1,0 +1,150 @@
+2021-02-07 18:56:24,428:WARNING: * Debugger is active!
+2021-02-07 18:56:24,432:INFO: * Debugger PIN: 282-497-515
+2021-02-07 18:56:36,488:INFO:127.0.0.1 - - [07/Feb/2021 18:56:36] "PUT /virtualmachine/1 HTTP/1.1" 409 -
+2021-02-07 18:56:36,589:INFO:127.0.0.1 - - [07/Feb/2021 18:56:36] "PUT /virtualmachine/2 HTTP/1.1" 409 -
+2021-02-07 18:56:36,686:INFO:127.0.0.1 - - [07/Feb/2021 18:56:36] "PUT /virtualmachine/3 HTTP/1.1" 409 -
+2021-02-07 18:56:36,782:INFO:127.0.0.1 - - [07/Feb/2021 18:56:36] "PUT /virtualmachine/4 HTTP/1.1" 409 -
+2021-02-07 18:56:36,936:INFO:127.0.0.1 - - [07/Feb/2021 18:56:36] "PUT /virtualmachine/5 HTTP/1.1" 201 -
+2021-02-07 18:56:37,033:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "PUT /virtualmachine/3 HTTP/1.1" 409 -
+2021-02-07 18:56:37,162:DEBUG:Machine with IP 1.1.1.1 is marked Allocatted and assigned to customer at: 
+Sun Feb  7 18:56:37 2021
+2021-02-07 18:56:37,185:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/1 HTTP/1.1" 200 -
+2021-02-07 18:56:37,386:DEBUG:Machine with IP 2.2.2.2 is marked Allocatted and assigned to customer at: 
+Sun Feb  7 18:56:37 2021
+2021-02-07 18:56:37,397:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/2 HTTP/1.1" 200 -
+2021-02-07 18:56:37,517:DEBUG:Machine with IP 3.3.3.3 is marked Allocatted and assigned to customer at: 
+Sun Feb  7 18:56:37 2021
+2021-02-07 18:56:37,528:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/3 HTTP/1.1" 200 -
+2021-02-07 18:56:37,649:DEBUG:Machine with IP 4.4.4.4 is marked Allocatted and assigned to customer at: 
+Sun Feb  7 18:56:37 2021
+2021-02-07 18:56:37,660:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/4 HTTP/1.1" 200 -
+2021-02-07 18:56:37,780:DEBUG:Machine with IP 5.5.5.5 is marked Allocatted and assigned to customer at: 
+Sun Feb  7 18:56:37 2021
+2021-02-07 18:56:37,791:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/5 HTTP/1.1" 200 -
+2021-02-07 18:56:37,867:DEBUG:Got allocation request, but none of the VMs available
+2021-02-07 18:56:37,879:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/1 HTTP/1.1" 404 -
+2021-02-07 18:56:37,955:DEBUG:Got allocation request, but none of the VMs available
+2021-02-07 18:56:37,968:INFO:127.0.0.1 - - [07/Feb/2021 18:56:37] "GET /virtualmachine/5 HTTP/1.1" 404 -
+2021-02-07 18:56:38,099:INFO:127.0.0.1 - - [07/Feb/2021 18:56:38] "DELETE /virtualmachine/5 HTTP/1.1" 200 -
+2021-02-07 18:56:38,186:INFO:127.0.0.1 - - [07/Feb/2021 18:56:38] "DELETE /virtualmachine/50 HTTP/1.1" 404 -
+2021-02-07 18:56:38,273:INFO:127.0.0.1 - - [07/Feb/2021 18:56:38] "DELETE /virtualmachine/100 HTTP/1.1" 404 -
+2021-02-07 18:56:38,431:DEBUG:Machine with IP 1.1.1.1 is added back to the VM Resource Pool and marked Available at: 
+Sun Feb  7 18:56:38 2021
+2021-02-07 18:56:40,504:DEBUG:Then machine 1.1.1.1 is not reachable: Timeout exceeded.
+<pexpect.pty_spawn.spawn object at 0xb42efb10>
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'root@1.1.1.1']
+buffer (last 100 chars): b''
+
+after: <class 'pexpect.exceptions.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 4111
+child_fd: 10
+closed: False
+timeout: 2
+delimiter: <class 'pexpect.exceptions.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+searcher: searcher_re:
+    0: re.compile(b'password')
+2021-02-07 18:56:40,626:INFO:127.0.0.1 - - [07/Feb/2021 18:56:40] "PATCH /virtualmachine/1 HTTP/1.1" 201 -
+2021-02-07 18:56:40,828:DEBUG:Machine with IP 2.2.2.2 is added back to the VM Resource Pool and marked Available at: 
+Sun Feb  7 18:56:40 2021
+2021-02-07 18:56:42,913:DEBUG:Then machine 2.2.2.2 is not reachable: Timeout exceeded.
+<pexpect.pty_spawn.spawn object at 0xb42cca10>
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'root@2.2.2.2']
+buffer (last 100 chars): b''
+
+after: <class 'pexpect.exceptions.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 4113
+child_fd: 10
+closed: False
+timeout: 2
+delimiter: <class 'pexpect.exceptions.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+searcher: searcher_re:
+    0: re.compile(b'password')
+2021-02-07 18:56:43,034:INFO:127.0.0.1 - - [07/Feb/2021 18:56:43] "PATCH /virtualmachine/2 HTTP/1.1" 201 -
+2021-02-07 18:56:43,232:DEBUG:Machine with IP 3.3.3.3 is added back to the VM Resource Pool and marked Available at: 
+Sun Feb  7 18:56:43 2021
+2021-02-07 18:56:45,334:DEBUG:Then machine 3.3.3.3 is not reachable: Timeout exceeded.
+<pexpect.pty_spawn.spawn object at 0xb4293610>
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'root@3.3.3.3']
+buffer (last 100 chars): b''
+
+after: <class 'pexpect.exceptions.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 4115
+child_fd: 10
+closed: False
+timeout: 2
+delimiter: <class 'pexpect.exceptions.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+searcher: searcher_re:
+    0: re.compile(b'password')
+2021-02-07 18:56:45,456:INFO:127.0.0.1 - - [07/Feb/2021 18:56:45] "PATCH /virtualmachine/3 HTTP/1.1" 201 -
+2021-02-07 18:56:45,700:DEBUG:Machine with IP 4.4.4.4 is added back to the VM Resource Pool and marked Available at: 
+Sun Feb  7 18:56:45 2021
+2021-02-07 18:56:47,755:DEBUG:Then machine 4.4.4.4 is not reachable: Timeout exceeded.
+<pexpect.pty_spawn.spawn object at 0xb5fddef0>
+command: /usr/bin/ssh
+args: ['/usr/bin/ssh', 'root@4.4.4.4']
+buffer (last 100 chars): b''
+
+after: <class 'pexpect.exceptions.TIMEOUT'>
+match: None
+match_index: None
+exitstatus: None
+flag_eof: False
+pid: 4117
+child_fd: 10
+closed: False
+timeout: 2
+delimiter: <class 'pexpect.exceptions.EOF'>
+logfile: None
+logfile_read: None
+logfile_send: None
+maxread: 2000
+ignorecase: False
+searchwindowsize: None
+delaybeforesend: 0.05
+delayafterclose: 0.1
+delayafterterminate: 0.1
+searcher: searcher_re:
+    0: re.compile(b'password')
+2021-02-07 18:56:47,878:INFO:127.0.0.1 - - [07/Feb/2021 18:56:47] "PATCH /virtualmachine/4 HTTP/1.1" 201 -
