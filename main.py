@@ -72,14 +72,17 @@ class serverResources(Resource):
             abort(404, message='VMs not available for assignment, either all are reserved or down for maintenance')
         result.allocstatus = "Allocated"
         result.user = gargs['user']
+        result.timestamp = time.time()
         db.session.commit()
-        s1 = "Machine with IP " + str(result.ip) + " is marked Allocatted and assigned to customer at: \n" + str(time.ctime()) 
+        s1 = "Machine with IP " + str(result.ip) + " is marked Allocated and assigned to customer at: \n" + str(time.ctime()) 
         logging.debug(s1)
         return result  
 
     @marshal_with(resource_fields)
     def put(self, vmid):
         args = resPutArgs.parse_args()
+        if args['user'] != 'ADMINISTRATOR':
+            abort(404, message='You do not have privilege to perform this activity')
         result = addToDb.query.filter_by(virtmach=vmid).first()
         if result:
             abort(409, message="VMID already exists")
@@ -99,15 +102,20 @@ class serverResources(Resource):
             abort(404, message='You are not the same user whom machine was allocated')
         result.allocstatus = "Available"
         result.user = None
+        usage_time = time.time() - result.timestamp
+        result.timestamp = 0
         db.session.commit()
-        s1 = "Machine with IP " + str(result.ip) + " is added back to the VM Resource Pool and marked Available at: \n" + str(time.ctime()) 
+        s1 = "Machine with IP " + str(result.ip) +\
+                " is added back to the VM Resource Pool and marked Available at: \n" + \
+                str(time.ctime() +\
+                "\nMachine was used for " + str(usage_time) + " seconds") 
         logging.debug(s1)
         cleanup.sshConn(str(result.ip))
         return result, 201
 
     @marshal_with(resource_fields)
     def delete(self, vmid):
-        #args = resUpdateArgs.parse_args()
+        #args = resPutArgs.parse_args()
         result = addToDb.query.filter_by(virtmach=vmid).first()
         if result:
             db.session.delete(result)

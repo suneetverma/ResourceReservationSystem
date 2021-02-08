@@ -3,15 +3,15 @@ import requests
 BASE = "http://127.0.0.1:5000/"
 
 # Adding the Virtual Machines in the Resource Pool:
-response = requests.put(BASE + "virtualmachine/1", {"hostname": "KVM-VM-001", "ip": "1.1.1.1", 'allocstatus': 'Available'})
+response = requests.put(BASE + "virtualmachine/1", {"hostname": "KVM-VM-001", "ip": "1.1.1.1", 'allocstatus': 'Available', 'user': 'ADMINISTRATOR'})
 print(response.json())
-response = requests.put(BASE + "virtualmachine/2", {"hostname": "KVM-VM-002", "ip": "2.2.2.2", 'allocstatus': 'Available'})
+response = requests.put(BASE + "virtualmachine/2", {"hostname": "KVM-VM-002", "ip": "2.2.2.2", 'allocstatus': 'Available', 'user': 'ADMINISTRATOR'})
 print(response.json())
-response = requests.put(BASE + "virtualmachine/3", {"hostname": "KVM-VM-003", "ip": "3.3.3.3", 'allocstatus': 'Available'})
+response = requests.put(BASE + "virtualmachine/3", {"hostname": "KVM-VM-003", "ip": "3.3.3.3", 'allocstatus': 'Available', 'user': 'ADMINISTRATOR'})
 print(response.json())
-response = requests.put(BASE + "virtualmachine/4", {"hostname": "KVM-VM-004", "ip": "4.4.4.4", 'allocstatus': 'Available'})
+response = requests.put(BASE + "virtualmachine/4", {"hostname": "KVM-VM-004", "ip": "4.4.4.4", 'allocstatus': 'Available', 'user': 'ADMINISTRATOR'})
 print(response.json())
-response = requests.put(BASE + "virtualmachine/5", {"hostname": "KVM-VM-005", "ip": "5.5.5.5", 'allocstatus': 'Available'})
+response = requests.put(BASE + "virtualmachine/5", {"hostname": "KVM-VM-005", "ip": "5.5.5.5", 'allocstatus': 'Available', 'user': 'ADMINISTRATOR'})
 print(response.json())
 
 # Duplicating the Virtual Machines in the Resource Pool
