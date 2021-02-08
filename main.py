@@ -100,15 +100,15 @@ class serverResources(Resource):
             abort(404, message='the ip does not exist')
         if uargs['user'] != result.user:
             abort(404, message='You are not the same user whom machine was allocated')
+        user_n_ip = result.user + " ( " + result.ip + " )"
         result.allocstatus = "Available"
         result.user = None
         usage_time = time.time() - result.timestamp
         result.timestamp = 0
         db.session.commit()
         s1 = "Machine with IP " + str(result.ip) +\
-                " is added back to the VM Resource Pool and marked Available at: \n" + \
-                str(time.ctime() +\
-                "\nMachine was used for " + str(usage_time) + " seconds") 
+                " is added back to the VM Resource Pool and marked AVAILABLE on: \n" + str(time.ctime() +\
+                "\nUser "  + user_n_ip + " should be billed for " + str(usage_time) + " seconds") 
         logging.debug(s1)
         cleanup.sshConn(str(result.ip))
         return result, 201
